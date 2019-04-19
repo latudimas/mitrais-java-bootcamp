@@ -1,8 +1,10 @@
 package com.mitrais.javabootcamp.models;
 
-import org.joda.time.LocalDate;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "artist")
