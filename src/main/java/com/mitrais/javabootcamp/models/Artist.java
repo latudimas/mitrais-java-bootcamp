@@ -1,8 +1,5 @@
 package com.mitrais.javabootcamp.models;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -12,7 +9,7 @@ public class Artist {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "id", updatable = false, nullable = false)
     private long id;
 
     @Column(name = "firstname", nullable = false)
@@ -23,6 +20,10 @@ public class Artist {
 
     @Column(name = "dateOfBirth", nullable = false)
     private LocalDate dateOfBirth;
+
+    // One to One Relationship with Album class
+//    @OneToOne(mappedBy = "album")
+//    private Album album;
 
     // Constructor
     public Artist() {
