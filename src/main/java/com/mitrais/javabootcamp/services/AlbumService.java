@@ -14,4 +14,5 @@ public interface AlbumService {
     long countAlbum();
     List<Album> getAlbumByArtistId(long id);
     List<Album> getAlbumByArtistName(String firstName);
+    List<Album> getAlbumUsingStream(long id);
 }

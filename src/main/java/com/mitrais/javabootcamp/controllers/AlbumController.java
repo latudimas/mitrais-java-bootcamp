@@ -45,4 +45,9 @@ public class AlbumController {
         return albumService.getAlbumByArtistName(firstName);
     }
 
+    @GetMapping("/stream/{id}")
+    public List<Album> getAlbumByStream(@PathVariable Long id) {
+        LOG.info("Get album by artist id using stream");
+        return albumService.getAlbumUsingStream(id);
+    }
 }

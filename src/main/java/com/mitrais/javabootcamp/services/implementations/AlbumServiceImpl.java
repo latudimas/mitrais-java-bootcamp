@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class AlbumServiceImpl implements AlbumService {
@@ -53,5 +54,12 @@ public class AlbumServiceImpl implements AlbumService {
     @Override
     public List<Album> getAlbumByArtistName(String firstName) {
         return albumRepository.getAlbumByArtistName(firstName);
+    }
+
+    @Override
+    public List<Album> getAlbumUsingStream(long id) {
+        return albumRepository.findAll().stream()
+                .filter(album -> album.getArtist().getId() == id)
+                .collect(Collectors.toList());
     }
 }
