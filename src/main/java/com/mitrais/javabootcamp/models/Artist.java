@@ -21,10 +21,6 @@ public class Artist {
     @Column(name = "dateOfBirth", nullable = false)
     private LocalDate dateOfBirth;
 
-    // One to One Relationship with Album class
-//    @OneToOne(mappedBy = "album")
-//    private Album album;
-
     // Constructor
     public Artist() {
     }

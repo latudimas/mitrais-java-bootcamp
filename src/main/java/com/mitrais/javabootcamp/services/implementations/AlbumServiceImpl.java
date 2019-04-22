@@ -44,4 +44,14 @@ public class AlbumServiceImpl implements AlbumService {
     public long countAlbum() {
         return albumRepository.count();
     }
+
+    @Override
+    public List<Album> getAlbumByArtistId(long id) {
+        return albumRepository.getAlbumByArtistId(id);
+    }
+
+    @Override
+    public List<Album> getAlbumByArtistName(String firstName) {
+        return albumRepository.getAlbumByArtistName(firstName);
+    }
 }

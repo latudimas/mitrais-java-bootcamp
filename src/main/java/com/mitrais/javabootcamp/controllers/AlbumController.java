@@ -32,4 +32,17 @@ public class AlbumController {
         LOG.info("Insert an Album into database");
         return albumService.createAlbum(album);
     }
+
+    @GetMapping("/{id}")
+    public List<Album> getAlbumByArtistId(@PathVariable Long id) {
+        LOG.info("Get Album by Artist Id");
+        return albumService.getAlbumByArtistId(id);
+    }
+
+    @GetMapping("/search")
+    public List<Album> getAlbumByArtistName(@RequestParam("firstName") String firstName) {
+        LOG.info("Get Album by Artist First Name : " + firstName);
+        return albumService.getAlbumByArtistName(firstName);
+    }
+
 }

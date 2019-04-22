@@ -12,4 +12,6 @@ public interface AlbumService {
     void deleteAlbum(Long id);
     List<Album> getAllAlbum();
     long countAlbum();
+    List<Album> getAlbumByArtistId(long id);
+    List<Album> getAlbumByArtistName(String firstName);
 }
