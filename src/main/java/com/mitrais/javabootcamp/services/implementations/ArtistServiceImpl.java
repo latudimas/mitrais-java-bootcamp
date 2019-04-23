@@ -71,4 +71,28 @@ public class ArtistServiceImpl implements ArtistService {
     public long countArtist() {
         return artistRepository.count();
     }
+
+    /**
+     * List all artist by their date of birth
+     * The list can be ordered ascending or descending based on the keyword parameters
+     * @param keyword choose between ascending or descending order
+     * @return list of artist ordered by their date of birth
+     */
+    @Override
+    public List<Artist> getAllArtistOrderedByDateOfBirth(String keyword) {
+//        if (keyword.toLowerCase().equals("desc") || keyword.toLowerCase().equals("descending")) {
+//            return artistRepository.descendingOrderDateOfBirth();
+//        } else if (keyword.toLowerCase().equals("asc") || keyword.toLowerCase().equals("ascending")) {
+//            return artistRepository.ascendingOrderDateOfBirth();
+//        }
+
+        switch (keyword.toLowerCase()) {
+            case "desc":
+                return artistRepository.descendingOrderDateOfBirth();
+            case "asc":
+                return artistRepository.ascendingOrderDateOfBirth();
+            default:
+                return null;
+        }
+    }
 }

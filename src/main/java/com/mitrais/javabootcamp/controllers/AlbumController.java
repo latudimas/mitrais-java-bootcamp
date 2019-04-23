@@ -50,4 +50,6 @@ public class AlbumController {
         LOG.info("Get album by artist id using stream");
         return albumService.getAlbumUsingStream(id);
     }
+
+
 }

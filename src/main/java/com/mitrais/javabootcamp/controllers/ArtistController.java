@@ -32,4 +32,10 @@ public class ArtistController {
         LOG.info("Insert An Artist into Database");
         return artistService.createArtist(artist);
     }
+
+    @GetMapping("/order")
+    public List<Artist> orderArtistByDateOfBirth(@RequestParam String keyword) {
+        LOG.info("Ordered artist by their date of birth: " + keyword);
+        return artistService.getAllArtistOrderedByDateOfBirth(keyword);
+    }
 }

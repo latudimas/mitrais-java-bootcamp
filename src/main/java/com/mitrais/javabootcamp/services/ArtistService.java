@@ -12,4 +12,5 @@ public interface ArtistService {
     void deleteArtistById(Long id);
     List<Artist> getAllArtist();
     long countArtist();
+    List<Artist> getAllArtistOrderedByDateOfBirth(String keyword);
 }
