@@ -33,9 +33,23 @@ public class ArtistController {
         return artistService.createArtist(artist);
     }
 
-    @GetMapping("/order")
+    @GetMapping("/orderedByDateOfBirth")
     public List<Artist> orderArtistByDateOfBirth(@RequestParam String keyword) {
         LOG.info("Ordered artist by their date of birth: " + keyword);
         return artistService.getAllArtistOrderedByDateOfBirth(keyword);
     }
+
+//    @GetMapping("/orderStream")
+//    public List<Artist> orderArtistByDateOfBirthStream(@RequestParam String keyword) {
+//        LOG.info("Ordered artist by their date of birth: " + keyword);
+//        long startTime = System.currentTimeMillis();
+//
+//        List<Artist> orderedList = artistService.getAllArtistOrderedByDateOfBirthStream(keyword);
+//
+//        long endTime = System.currentTimeMillis();
+//        System.out.println(endTime - startTime);
+//
+//        return orderedList;
+////        return artistService.getAllArtistOrderedByDateOfBirth(keyword);
+//    }
 }

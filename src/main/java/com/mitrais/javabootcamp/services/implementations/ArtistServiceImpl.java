@@ -6,8 +6,10 @@ import com.mitrais.javabootcamp.services.ArtistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class ArtistServiceImpl implements ArtistService {
@@ -80,12 +82,6 @@ public class ArtistServiceImpl implements ArtistService {
      */
     @Override
     public List<Artist> getAllArtistOrderedByDateOfBirth(String keyword) {
-//        if (keyword.toLowerCase().equals("desc") || keyword.toLowerCase().equals("descending")) {
-//            return artistRepository.descendingOrderDateOfBirth();
-//        } else if (keyword.toLowerCase().equals("asc") || keyword.toLowerCase().equals("ascending")) {
-//            return artistRepository.ascendingOrderDateOfBirth();
-//        }
-
         switch (keyword.toLowerCase()) {
             case "desc":
                 return artistRepository.descendingOrderDateOfBirth();
@@ -95,4 +91,20 @@ public class ArtistServiceImpl implements ArtistService {
                 return null;
         }
     }
+
+//    @Override
+//    public List<Artist> getAllArtistOrderedByDateOfBirthStream(String keyword) {
+//        switch (keyword.toLowerCase()) {
+//            case "desc":
+//                return artistRepository.findAll().stream()
+//                        .sorted(Comparator.comparing(Artist::getDateOfBirth).reversed())
+//                        .collect(Collectors.toList());
+//            case "asc":
+//                return artistRepository.findAll().stream()
+//                        .sorted(Comparator.comparing(Artist::getDateOfBirth))
+//                        .collect(Collectors.toList());
+//            default:
+//                return null;
+//        }
+//    }
 }

@@ -13,4 +13,5 @@ public interface ArtistService {
     List<Artist> getAllArtist();
     long countArtist();
     List<Artist> getAllArtistOrderedByDateOfBirth(String keyword);
+//    List<Artist> getAllArtistOrderedByDateOfBirthStream(String keyword);
 }
