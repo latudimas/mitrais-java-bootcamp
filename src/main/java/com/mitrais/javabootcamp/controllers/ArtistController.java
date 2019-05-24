@@ -5,6 +5,7 @@ import com.mitrais.javabootcamp.services.implementations.ArtistServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,8 +29,9 @@ public class ArtistController {
     }
 
     @PostMapping
-    public Artist createArtist(@RequestBody Artist artist) {
+    public Artist createArtist(@RequestBody Artist artist, Model model) {
         LOG.info("Insert An Artist into Database");
+        model.addAttribute("artist", artistService.getAllArtist());
         return artistService.createArtist(artist);
     }
 

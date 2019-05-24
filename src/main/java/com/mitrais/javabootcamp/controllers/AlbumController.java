@@ -39,6 +39,7 @@ public class AlbumController {
         return albumService.getAlbumByArtistId(id);
     }
 
+    // Todo Still Not working, need rework on the queries
     @GetMapping("/search")
     public List<Album> getAlbumByArtistName(@RequestParam("firstName") String firstName) {
         LOG.info("Get Album by Artist First Name : " + firstName);
